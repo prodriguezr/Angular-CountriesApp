@@ -5,20 +5,26 @@ import { CountriesService } from '../../services/countries.service';
 @Component({
   selector: 'app-by-country',
   templateUrl: './by-country.component.html',
-  styles: [
+  styles: [`
+    li {
+      cursor: pointer
+    }
+  `
   ]
 })
 export class ByCountryComponent {
-  query:string = '';
-  hasError:boolean = false;
-  countries:Country[] = [];
+  query             :string    = '';
+  hasError          :boolean   = false;
+  countries         :Country[] = [];
+  suggestedCountries:Country[] = [];
+  showSuggestions   :boolean   = false;
 
   constructor(private countriesService:CountriesService) { }
 
-  search(queryString:string = ''):void {
+  search(query:string = ''):void {
     this.hasError = false;
-
-    this.query = queryString.trim();
+    this.query = query.trim();
+    this.showSuggestions = false;
 
     if (this.query.length > 0) {
       this.countriesService.searchByCountry(this.query)
@@ -34,7 +40,15 @@ export class ByCountryComponent {
     }
   }
 
-  suggestions(event:any):void {
-    console.log(event);
+  suggestions(query:string):void {
+    this.hasError = false;
+    this.query = query;
+    this.showSuggestions = true;
+
+    this.countriesService.searchByCountry(query.trim())
+      .subscribe(
+        countries => this.suggestedCountries = countries.splice(0, 5)
+        , (err) => this.suggestedCountries = []
+      );
   }
 }

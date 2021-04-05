@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ByCountryComponent } from './countries/pages/by-country/by-country.component';
-import { ByContinentComponent } from './countries/pages/by-continent/by-continent.component';
+import { ByRegionComponent } from './countries/pages/by-region/by-region.component';
 import { ByCapitalComponent } from './countries/pages/by-capital/by-capital.component';
 import { ShowCountryComponent } from './countries/pages/show-country/show-country.component';
 
@@ -13,7 +13,7 @@ const routes:Routes = [
     },
     {
         path: 'region',
-        component: ByContinentComponent,
+        component: ByRegionComponent,
     },
     {
         path: 'capital',

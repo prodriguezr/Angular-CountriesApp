@@ -1,15 +1,34 @@
-<h2>Por País</h2>
-<hr>
-
-<div class="row">
-    <div class="col">
-        <app-country-input
-            (onEnter)="search($event)"
-            (onDebounce)="suggestions($event)"
-            placeholder="Buscar país...">
-        </app-country-input>
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h2>Por País</h2>
+    <hr>
+    
+    <div class="row">
+        <div class="col">
+            <app-country-input
+                (onEnter)="search($event)"
+                (onDebounce)="suggestions($event)"
+                placeholder="Buscar país...">
+            </app-country-input>
+        </div>
     </div>
 </div>
+
+<ul *ngIf="showSuggestions"
+    class="list-group">
+    <li *ngFor="let country of suggestedCountries" 
+        class="list-group-item list-group-item-action">
+        <a class="nav-link"
+            [routerLink]="['/pais', country.alpha2Code]">
+            {{ country.translations.es }}
+        </a>
+    </li>
+    <li class="list-group-item list-group-item-action">
+        <a class="nav-link"
+            (click)="search(query)">
+            Buscar "{{ query }}"
+        </a>
+    </li>
+</ul>
 
 <hr>
 

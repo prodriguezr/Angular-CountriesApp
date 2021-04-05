@@ -6,7 +6,7 @@
 <ng-template #divCountry>
     <div class="row">
         <div class="col-12">
-            <h1>País: <small>{{country.name}}</small></h1>
+            <h1>País: <small>{{country.translations.es}}</small></h1>
         </div>
     </div>
     <div class="row">
@@ -24,4 +24,26 @@
             </ul>
         </div>
     </div>
+
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary mr-1">{{ country.translations.de }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.es }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.fr }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.ja }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.it }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.br }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.pt }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.nl }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.hr }}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.fa }}</span>
+
+        </div>
+    </div>
+
+
+    <!-- <pre class="mt-5">
+        {{ country | json }}
+    </pre> -->
 </ng-template>

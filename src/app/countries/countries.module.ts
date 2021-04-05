@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ByCapitalComponent } from './pages/by-capital/by-capital.component';
 import { ByCountryComponent } from './pages/by-country/by-country.component';
-import { ByContinentComponent } from './pages/by-continent/by-continent.component';
+import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { ShowCountryComponent } from './pages/show-country/show-country.component';
 import { CountryTableComponent } from './components/country-table/country-table.component';
 import { CountryInputComponent } from './components/country-input/country-input.component';
@@ -15,7 +15,7 @@ import { CountryInputComponent } from './components/country-input/country-input.
   declarations: [
     ByCapitalComponent, 
     ByCountryComponent, 
-    ByContinentComponent, 
+    ByRegionComponent, 
     ShowCountryComponent, 
     CountryTableComponent, CountryInputComponent,
   ],
@@ -28,7 +28,7 @@ import { CountryInputComponent } from './components/country-input/country-input.
   exports: [
     ByCapitalComponent, 
     ByCountryComponent, 
-    ByContinentComponent, 
+    ByRegionComponent, 
     ShowCountryComponent
   ],
 })
